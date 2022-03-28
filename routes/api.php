@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\BitcoinInfoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,12 +16,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/test', function (Request $request) {
-    dd($request->all());
     return response()->json([
         'message' => 'Welcome to the API',
         'version' => '1.0.0'
     ]);
 });
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+
+Route::get('/getBitcoinInfo', [BitcoinInfoController::class, 'index']);
+
+// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
