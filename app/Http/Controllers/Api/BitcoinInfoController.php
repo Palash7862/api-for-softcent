@@ -18,7 +18,7 @@ class BitcoinInfoController extends Controller
         ]);
 
         if ($validate->fails()) {
-            return response()->json([
+            return response([
                 'message' => 'Validation Faild',
                 'errors' => $validate->errors()
             ], 400);
@@ -27,11 +27,10 @@ class BitcoinInfoController extends Controller
         $lastMonthRate = $this->getLastMonthRate($request->currency);
         $currentRate = $this->getCurrentRate($request->currency);
 
-        return response()->json([
-            'message'       => 'Welcome to the API',
+        return response([
             'current_rate'  => $currentRate,
             ...$lastMonthRate
-        ]);
+        ], 200);
     }
 
     private function getLastMonthRate($currency)
