@@ -2,9 +2,9 @@
 version: '3'
 services:
     apisoftcent.test:
-        build:
-            context: ./docker
-            dockerfile: Dockerfile
+        # build:
+        #     context: ./docker
+        #     dockerfile: Dockerfile
         image: palash7862/apisoftcent
         extra_hosts:
             - 'host.docker.internal:host-gateway'
