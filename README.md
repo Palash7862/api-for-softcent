@@ -1,3 +1,17 @@
+Getting started
+-------------------------------------------------
+Locally Project setup steps
+
+```shell
+$ git@github.com:Palash7862/api-for-softcent.git
+
+# server
+$ run :  docker-compose up -d
+
+# client
+$ go http://localhost:80/api/getBitcoinInfo
+```
+
 **Show Bitcoin Info**
 ----
   Returns json data about a single user.
