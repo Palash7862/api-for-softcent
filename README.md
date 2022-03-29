@@ -50,7 +50,7 @@ $ go http://localhost:80/api/getBitcoinInfo
  
 * **Error Response:**
 
-  * **Code:** 404 NOT FOUND <br />
+  * **Code:** 400 Validation Faild <br />
     **Content:** `{
         "message": "Validation Faild",
         "errors": {
